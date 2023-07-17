@@ -9,7 +9,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -17,13 +16,13 @@ import javax.persistence.OneToMany;
 public class PuntoVendita {
 	@Id
 	@GeneratedValue
-	Long id;
+	private Long id;
 	@Column(nullable = false)
-	String citta;
+	private String citta;
 	@Column(nullable = false)
-	String Settore;
+	private String Settore;
 	@OneToMany(fetch = FetchType.EAGER)
-	List<DocumentoVendita> DocumentiDiVenditaEmessi;
+	private List<DocumentoVendita> DocumentiDiVenditaEmessi;
 	
 	
 	
@@ -42,6 +41,28 @@ public class PuntoVendita {
 	}
 	public PuntoVendita() {
 		super();
+	}
+	public Long getId() {
+		return id;
+	}
+	
+	public String getCitta() {
+		return citta;
+	}
+	public void setCitta(String citta) {
+		this.citta = citta;
+	}
+	public String getSettore() {
+		return Settore;
+	}
+	public void setSettore(String settore) {
+		Settore = settore;
+	}
+	public List<DocumentoVendita> getDocumentiDiVenditaEmessi() {
+		return DocumentiDiVenditaEmessi;
+	}
+	public void setDocumentiDiVenditaEmessi(List<DocumentoVendita> documentiDiVenditaEmessi) {
+		DocumentiDiVenditaEmessi = documentiDiVenditaEmessi;
 	}
 	
 	

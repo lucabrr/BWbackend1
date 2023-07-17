@@ -14,13 +14,13 @@ import javax.persistence.OneToOne;
 public class Tessera {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	Long id;
+	private	Long id;
 	@Column(nullable = false)
-	LocalDate dataEmissione;
+	private	LocalDate dataEmissione;
 	@Column(nullable = false)
-	LocalDate dataScadenza;
+	private	LocalDate dataScadenza;
 	@OneToOne
-	Utente utente;
+	private	Utente utente;
 
 	public Tessera(Long id, LocalDate dataEmissione, LocalDate dataScadenza, Utente utente) {
 		super();
@@ -39,6 +39,35 @@ public class Tessera {
 
 	public Tessera() {
 		super();
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	
+	public LocalDate getDataEmissione() {
+		return dataEmissione;
+	}
+
+	public void setDataEmissione(LocalDate dataEmissione) {
+		this.dataEmissione = dataEmissione;
+	}
+
+	public LocalDate getDataScadenza() {
+		return dataScadenza;
+	}
+
+	public void setDataScadenza(LocalDate dataScadenza) {
+		this.dataScadenza = dataScadenza;
+	}
+
+	public Utente getUtente() {
+		return utente;
+	}
+
+	public void setUtente(Utente utente) {
+		this.utente = utente;
 	}
 	
 	

@@ -7,12 +7,14 @@ import javax.persistence.Entity;
 
 @Entity
 public class Biglietto extends DocumentoVendita {
-	@Column(nullable = false)
-	Boolean convalidato;
+	
+	private LocalDate dataConvalida;
+	
+
 
 	public Biglietto(Long id, String codice, LocalDate dataEmissione) {
 		super(id, codice, dataEmissione);
-		this.convalidato = false;
+		this.dataConvalida = null;
 		 
 	}
 
@@ -20,9 +22,17 @@ public class Biglietto extends DocumentoVendita {
 		super();
 	}
 
-	public Biglietto( String codice, LocalDate dataEmissione, Boolean convalidato) {
+	public Biglietto( String codice, LocalDate dataEmissione) {
 		super( codice, dataEmissione);
-		this.convalidato = convalidato;
+		this.dataConvalida = null;
+	}
+
+	public LocalDate getDataConvalida() {
+		return dataConvalida;
+	}
+
+	public void setDataConvalida(LocalDate dataConvalida) {
+		this.dataConvalida = dataConvalida;
 	}
 	
 	

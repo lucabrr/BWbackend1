@@ -10,11 +10,11 @@ import javax.persistence.Id;
 public class Utente {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	Long id;
+	private Long id;
 	@Column(nullable = false)
-	String nome;
+	private	String nome;
 	@Column(nullable = false)
-	String cognome;
+	private	String cognome;
 	
 	
 	public Utente(Long id, String nome, String cognome) {
@@ -32,6 +32,22 @@ public class Utente {
 	}
 	public Utente() {
 		super();
+	}
+	public Long getId() {
+		return id;
+	}
+	
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public String getCognome() {
+		return cognome;
+	}
+	public void setCognome(String cognome) {
+		this.cognome = cognome;
 	}
 
 	 

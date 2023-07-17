@@ -15,11 +15,11 @@ import javax.persistence.OneToMany;
 public class DocumentoVendita {
 	@Id
 	@GeneratedValue
-	Long id;
+	private Long id;
 	@Column(nullable = false)
-	String codice;
+	private String codice;
 	@Column(nullable = false)
-	LocalDate dataEmissione;
+	private LocalDate dataEmissione;
 	
 	
 	
@@ -44,6 +44,40 @@ public class DocumentoVendita {
 
 	public DocumentoVendita() {
 		super();
+	}
+
+
+
+	public Long getId() {
+		return id;
+	}
+
+
+
+	
+
+
+
+	public String getCodice() {
+		return codice;
+	}
+
+
+
+	public void setCodice(String codice) {
+		this.codice = codice;
+	}
+
+
+
+	public LocalDate getDataEmissione() {
+		return dataEmissione;
+	}
+
+
+
+	public void setDataEmissione(LocalDate dataEmissione) {
+		this.dataEmissione = dataEmissione;
 	}
 	
 	
