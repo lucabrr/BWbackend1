@@ -1,0 +1,27 @@
+package com.epicode.model;
+
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+
+@Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+public class PuntoVendita {
+	@Id
+	@GeneratedValue
+	Long id;
+	@Column(nullable = false)
+	String citta;
+	@Column(nullable = false)
+	String Settore;
+	@Column(nullable = false)
+	List<DocumentoVendita> DocumentiDiVenditaEmessi;
+	
+	
+
+}

@@ -1,0 +1,22 @@
+package com.epicode.model;
+
+import java.time.LocalDate;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+
+@Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+public class DocumentoVendita {
+	@Id
+	@GeneratedValue
+	Long id;
+	@Column(nullable = false)
+	String codice;
+	@Column(nullable = false)
+	LocalDate dataEmissione;
+}

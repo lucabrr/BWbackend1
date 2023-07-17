@@ -1,0 +1,32 @@
+package com.epicode.model;
+
+import java.time.LocalDate;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+
+@Entity
+public class Biglietto extends DocumentoVendita {
+	@Column(nullable = false)
+	Boolean convalidato;
+
+	public Biglietto(Long id, String codice, LocalDate dataEmissione) {
+		super(id, codice, dataEmissione);
+		this.convalidato = false;
+		 
+	}
+
+	public Biglietto() {
+		super();
+	}
+
+	public Biglietto( String codice, LocalDate dataEmissione, Boolean convalidato) {
+		super( codice, dataEmissione);
+		this.convalidato = convalidato;
+	}
+	
+	
+	
+	
+	
+}
