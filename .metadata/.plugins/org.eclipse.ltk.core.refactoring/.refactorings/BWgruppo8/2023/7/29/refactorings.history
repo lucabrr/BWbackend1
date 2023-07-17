@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete element from project &apos;BWgruppo8&apos;&#x0D;&#x0A;- Original project: &apos;BWgruppo8&apos;&#x0D;&#x0A;- Original element: &apos;BWgruppo8/src/com.epicode.controller&apos;" description="Delete element" element1="/src=/optional=/true=/=/maven.pomderived=/true=/&lt;com.epicode.controller" element2="/src=/optional=/true=/=/maven.pomderived=/true=/&lt;com.epicode" element3="/src=/optional=/true=/=/maven.pomderived=/true=/&lt;com" elements="3" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1689583007143" subPackages="false" version="1.0"/>
+</session>

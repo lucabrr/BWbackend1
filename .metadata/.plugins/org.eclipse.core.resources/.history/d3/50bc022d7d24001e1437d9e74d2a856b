@@ -1,0 +1,5 @@
+package com.epicode.util;
+
+public class JpaUtil {
+
+}
