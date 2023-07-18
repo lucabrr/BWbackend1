@@ -17,7 +17,7 @@ public class Tram extends MezziTrasporto{
 		this.periodoServizioFine = periodoServizioFine;
 		this.periodoServizioInizio = periodoServizioInizio;
 		this.periodoManutenzioneFine = periodoManutenzioneFine;
-		this.periodoManutenzioneInizio = periodoManutenzioneInizio;
+		this.periodoManutenzioneInizio = periodoManutenzioneInizio;//Da modificare
 		this.vidimato = vidimato;
 		this.targa = targa;
 	}
