@@ -1,0 +1,24 @@
+package com.epicode.model.DAO;
+
+import com.epicode.controller.MainProject;
+import com.epicode.model.DistributoreAutomatico;
+import com.epicode.model.RivenditoreAutorizzato;
+
+public class DistributoreAutomaticoDAO {
+
+	
+	public static void save(DistributoreAutomatico d) {
+		try {
+			MainProject.em.getTransaction().begin();
+			MainProject.em.persist(d);
+			MainProject.em.getTransaction().commit();
+			MainProject.log.info("Distributore: "+ d.getCodice() +" creato");
+			
+			
+		} catch (Exception e) {
+			MainProject.em.getTransaction().rollback();
+			MainProject.log.error(e.getMessage());
+			
+		}
+	}
+}

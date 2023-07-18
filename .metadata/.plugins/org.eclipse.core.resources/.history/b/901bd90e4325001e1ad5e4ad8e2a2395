@@ -1,0 +1,54 @@
+package com.epicode.model;
+
+import java.time.LocalDate;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+
+@Entity
+public class Biglietto extends DocumentoVendita {
+	
+	private LocalDate dataConvalida;
+	
+
+
+	
+
+	public Biglietto(Long id, String codice, LocalDate dataEmissione, PuntoVendita puntoVendita,
+			LocalDate dataConvalida) {
+		super(id, codice, dataEmissione, puntoVendita);
+		this.dataConvalida = dataConvalida;
+	}
+
+	public Biglietto(String codice, LocalDate dataEmissione, PuntoVendita puntoVendita, LocalDate dataConvalida) {
+		super(codice, dataEmissione, puntoVendita);
+		this.dataConvalida = dataConvalida;
+	}
+
+	public Biglietto() {
+		super();
+	}
+
+	
+
+	public LocalDate getDataConvalida() {
+		return dataConvalida;
+	}
+
+	public void setDataConvalida(LocalDate dataConvalida) {
+		this.dataConvalida = dataConvalida;
+	}
+
+	@Override
+	public String toString() {
+		return "Biglietto [dataConvalida=" + dataConvalida + ", puntoVendita=" + puntoVendita + ", Id()=" + getId()
+				+ ", Codice=" + getCodice() + ", tDataEmissione()=" + getDataEmissione() + "]";
+	}
+
+	
+	
+	
+	
+	
+	
+}

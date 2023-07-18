@@ -2,6 +2,7 @@ package com.epicode.model;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -10,22 +11,27 @@ import javax.persistence.Enumerated;
 public class DistributoreAutomatico extends PuntoVendita {	
 	@Enumerated(EnumType.STRING)	
 	private Status status;
+	@Column(nullable = false)
+	private String codice;
 	
 	
 
-	public DistributoreAutomatico(Long id, String citta, String settore,
-			List<DocumentoVendita> documentiDiVenditaEmessi, Status status) {
-		super(id, citta, settore, documentiDiVenditaEmessi);
-		this.status = status;
-	}
+	
 	
 
-	public DistributoreAutomatico( String citta, String settore,
-			List<DocumentoVendita> documentiDiVenditaEmessi, Status status) {
-		super( citta, settore, documentiDiVenditaEmessi);
+
+	public DistributoreAutomatico( String citta, String settore, Status status, String codice) {
+		super( citta, settore);
 		this.status = status;
+		this.codice = codice;
 	}
-	
+
+
+	public DistributoreAutomatico(Long id, String citta, String settore, Status status, String codice) {
+		super(id, citta, settore);
+		this.status = status;
+		this.codice = codice;
+	}
 
 
 	public DistributoreAutomatico() {
@@ -40,6 +46,26 @@ public class DistributoreAutomatico extends PuntoVendita {
 	public void setStatus(Status status) {
 		this.status = status;
 	}
+
+
+	public String getCodice() {
+		return codice;
+	}
+
+
+	public void setCodice(String codice) {
+		this.codice = codice;
+	}
+
+
+	@Override
+	public String toString() {
+		return "DistributoreAutomatico [status=" + status + ", codice=" + codice + ", toString()=" + super.toString()
+				+ "]";
+	}
+
+
+	
 	
 	
 }

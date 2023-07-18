@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -21,23 +22,24 @@ public class PuntoVendita {
 	private String citta;
 	@Column(nullable = false)
 	private String Settore;
-	@OneToMany(fetch = FetchType.EAGER)
+	
+	@OneToMany(mappedBy = "puntoVendita")
 	private List<DocumentoVendita> DocumentiDiVenditaEmessi;
 	
 	
 	
-	public PuntoVendita(Long id, String citta, String settore, List<DocumentoVendita> documentiDiVenditaEmessi) {
+	public PuntoVendita(Long id, String citta, String settore) {
 		super();
 		this.id = id;
 		this.citta = citta;
-		Settore = settore;
-		DocumentiDiVenditaEmessi = documentiDiVenditaEmessi;
+		this.Settore = settore;
+		
 	}
-	public PuntoVendita(String citta, String settore, List<DocumentoVendita> documentiDiVenditaEmessi) {
+	public PuntoVendita(String citta, String settore ) {
 		super();
 		this.citta = citta;
-		Settore = settore;
-		DocumentiDiVenditaEmessi = documentiDiVenditaEmessi;
+		this.Settore = settore;
+		
 	}
 	public PuntoVendita() {
 		super();
@@ -63,6 +65,11 @@ public class PuntoVendita {
 	}
 	public void setDocumentiDiVenditaEmessi(List<DocumentoVendita> documentiDiVenditaEmessi) {
 		DocumentiDiVenditaEmessi = documentiDiVenditaEmessi;
+	}
+	@Override
+	public String toString() {
+		return "PuntoVendita [id=" + id + ", citta=" + citta + ", Settore=" + Settore + ""
+				+ "]";
 	}
 	
 	

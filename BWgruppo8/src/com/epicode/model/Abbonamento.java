@@ -17,22 +17,26 @@ public class Abbonamento extends DocumentoVendita {
 	private Tessera tessera;
 	
 	
-	public Abbonamento(Long id, String codice, LocalDate dataEmissione, LocalDate dataScadenza, Periodicita periodicita,
-			Tessera tessera) {
-		super(id, codice, dataEmissione);
+	
+	
+	
+	
+	public Abbonamento(Long id, String codice, LocalDate dataEmissione, PuntoVendita puntoVendita,
+			LocalDate dataScadenza, Periodicita periodicita, Tessera tessera) {
+		super(id, codice, dataEmissione, puntoVendita);
 		this.dataScadenza = dataScadenza;
 		this.periodicita = periodicita;
 		this.tessera = tessera;
 	}
-	
-	public Abbonamento( String codice, LocalDate dataEmissione, LocalDate dataScadenza, Periodicita periodicita,
-			Tessera tessera) {
-		super(codice, dataEmissione);
+
+	public Abbonamento(String codice, LocalDate dataEmissione, PuntoVendita puntoVendita, LocalDate dataScadenza,
+			Periodicita periodicita, Tessera tessera) {
+		super(codice, dataEmissione, puntoVendita);
 		this.dataScadenza = dataScadenza;
 		this.periodicita = periodicita;
 		this.tessera = tessera;
 	}
-	
+
 	public Abbonamento() {
 		super();
 		

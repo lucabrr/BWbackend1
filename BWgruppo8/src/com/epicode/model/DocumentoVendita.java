@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -20,24 +22,32 @@ public class DocumentoVendita {
 	private String codice;
 	@Column(nullable = false)
 	private LocalDate dataEmissione;
+	@ManyToOne
+	PuntoVendita puntoVendita;
 	
 	
 	
 	
 	
-	public DocumentoVendita(Long id, String codice, LocalDate dataEmissione) {
+	
+
+
+
+	public DocumentoVendita(String codice, LocalDate dataEmissione, PuntoVendita puntoVendita) {
 		super();
-		this.id = id;
 		this.codice = codice;
 		this.dataEmissione = dataEmissione;
+		this.puntoVendita = puntoVendita;
 	}
 
 
 
-	public DocumentoVendita(String codice, LocalDate dataEmissione) {
+	public DocumentoVendita(Long id, String codice, LocalDate dataEmissione, PuntoVendita puntoVendita) {
 		super();
+		this.id = id;
 		this.codice = codice;
 		this.dataEmissione = dataEmissione;
+		this.puntoVendita = puntoVendita;
 	}
 
 
@@ -78,6 +88,14 @@ public class DocumentoVendita {
 
 	public void setDataEmissione(LocalDate dataEmissione) {
 		this.dataEmissione = dataEmissione;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "DocumentoVendita [id=" + id + ", codice=" + codice + ", dataEmissione=" + dataEmissione
+				+ ", puntoVendita=" + puntoVendita + "]";
 	}
 	
 	

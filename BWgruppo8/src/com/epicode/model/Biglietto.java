@@ -12,20 +12,24 @@ public class Biglietto extends DocumentoVendita {
 	
 
 
-	public Biglietto(Long id, String codice, LocalDate dataEmissione) {
-		super(id, codice, dataEmissione);
-		this.dataConvalida = null;
-		 
+	
+
+	public Biglietto(Long id, String codice, LocalDate dataEmissione, PuntoVendita puntoVendita,
+			LocalDate dataConvalida) {
+		super(id, codice, dataEmissione, puntoVendita);
+		this.dataConvalida = dataConvalida;
+	}
+
+	public Biglietto(String codice, LocalDate dataEmissione, PuntoVendita puntoVendita, LocalDate dataConvalida) {
+		super(codice, dataEmissione, puntoVendita);
+		this.dataConvalida = dataConvalida;
 	}
 
 	public Biglietto() {
 		super();
 	}
 
-	public Biglietto( String codice, LocalDate dataEmissione) {
-		super( codice, dataEmissione);
-		this.dataConvalida = null;
-	}
+	
 
 	public LocalDate getDataConvalida() {
 		return dataConvalida;
@@ -34,6 +38,14 @@ public class Biglietto extends DocumentoVendita {
 	public void setDataConvalida(LocalDate dataConvalida) {
 		this.dataConvalida = dataConvalida;
 	}
+
+	@Override
+	public String toString() {
+		return "Biglietto [dataConvalida=" + dataConvalida + ", puntoVendita=" + puntoVendita + ", Id()=" + getId()
+				+ ", Codice=" + getCodice() + ", DataEmissione=" + getDataEmissione() + "]";
+	}
+
+	
 	
 	
 	
