@@ -63,6 +63,6 @@ public class MainProject {
 		//Abbonamento a2 = new Abbonamento("abb9999", LocalDate.of(2023, 8, 11), RivenditoreAutorizzatoDAO.getByCode("tru8977"), LocalDate.of(2023, 9, 10), Periodicita.MENSILE, TesseraDAO.getByCode("tes1212"));
 		//AbbonamentoDAO.save(a2);
 		//System.out.println(DocumentoVenditaDAO.getAllDocumentiEmessi(LocalDate.of(2022, 6, 10),LocalDate.of(2024, 10, 10),DistributoreAutomaticoDAO.getByCode("db9823")));
-		DocumentoVenditaDAO.controlloAbbonamento("tes2222");
+		//DocumentoVenditaDAO.controlloAbbonamento("tes2222");
 	}
 }
