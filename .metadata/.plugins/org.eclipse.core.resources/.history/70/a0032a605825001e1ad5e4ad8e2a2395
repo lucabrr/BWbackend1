@@ -1,0 +1,62 @@
+package com.epicode.controller;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.epicode.model.Abbonamento;
+import com.epicode.model.Biglietto;
+import com.epicode.model.DistributoreAutomatico;
+import com.epicode.model.DocumentoVendita;
+import com.epicode.model.Periodicita;
+import com.epicode.model.RivenditoreAutorizzato;
+import com.epicode.model.Status;
+import com.epicode.model.Tessera;
+import com.epicode.model.Utente;
+import com.epicode.model.DAO.AbbonamentoDAO;
+import com.epicode.model.DAO.BigliettoDAO;
+import com.epicode.model.DAO.DistributoreAutomaticoDAO;
+import com.epicode.model.DAO.DocumentoVenditaDAO;
+import com.epicode.model.DAO.RivenditoreAutorizzatoDAO;
+import com.epicode.model.DAO.TesseraDAO;
+import com.epicode.model.DAO.UtenteDAO;
+import com.epicode.util.JpaUtil;
+
+public class MainProject {
+	public static EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
+	 public static final Logger log = LoggerFactory.getLogger(MainProject.class);
+	public static void main(String[] args) {
+		
+		 
+		//RivenditoreAutorizzato r2 = new RivenditoreAutorizzato("Roma", "settore01", "Marco", "tru8977");
+		//RivenditoreAutorizzatoDAO.save(r2);
+		
+		//Biglietto b1 = new Biglietto("try2233", LocalDate.of(2022, 7, 5), RivenditoreAutorizzatoDAO.getById(17l), null);
+		//BigliettoDAO.save(b1);
+		
+		//RivenditoreAutorizzato r6 = RivenditoreAutorizzatoDAO.getById(17l);
+		//r6.getDocumentiDiVenditaEmessi().forEach(d -> log.info(d.toString()) );
+		
+		//DistributoreAutomatico d1 = new DistributoreAutomatico("Vicenza", "settore0", Status.ATTIVO,"db9823");
+		//DistributoreAutomaticoDAO.save(d1);
+		//Biglietto b2 = new Biglietto("bnb302", LocalDate.of(2023, 7, 9), DistributoreAutomaticoDAO.getByCode("db9823"), LocalDate.of(2023, 7, 9));
+		//BigliettoDAO.save(b2);
+		//DistributoreAutomatico d1 = DistributoreAutomaticoDAO.getByCode(" gfd123");
+		//d1.getDocumentiDiVenditaEmessi().forEach(e -> log.info(e.toString()));
+		
+		//Utente u1 = new Utente("Mario", "Rossi");
+		//UtenteDAO.save(u1);
+		// Tessera t1 = new Tessera("tes2222", LocalDate.of(2022, 5, 10), LocalDate.of(2022, 5, 10), UtenteDAO.getById(1l));
+		// TesseraDAO.save(t1);
+		
+		//Abbonamento a1 = new Abbonamento("abb2213", LocalDate.of(2022, 6, 20), DistributoreAutomaticoDAO.getByCode("db9823"), LocalDate.of(2022, 7, 19), Periodicita.MENSILE, TesseraDAO.getByCode("tes2222"));
+		//AbbonamentoDAO.save(a1);
+		System.out.println(DocumentoVenditaDAO.getAllDocumentiEmessi(LocalDate.of(2024, 6, 10),LocalDate.of(2024, 10, 10),DistributoreAutomaticoDAO.getByCode("db9823")));
+
+	}
+}

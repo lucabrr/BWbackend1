@@ -1,5 +1,7 @@
 package com.epicode.model.DAO;
 
+import javax.persistence.Query;
+
 import com.epicode.controller.MainProject;
 import com.epicode.model.Abbonamento;
 
@@ -36,5 +38,19 @@ public class AbbonamentoDAO {
 			MainProject.log.error(e.getMessage());
 			
 		}return a;
+	}
+	
+	public static Abbonamento getByCode(String codice) {
+		Abbonamento a = new Abbonamento();
+		String query = "SELECT a FROM abbonamento a WHERE a.codice = :codice";
+		try {
+		Query q = MainProject.em.createQuery(query);
+		a = (Abbonamento) q.getSingleResult();
+			
+			
+		} catch (Exception e) {
+			MainProject.log.equals(e.getMessage());
+		}return a;
+		
 	}
 }
