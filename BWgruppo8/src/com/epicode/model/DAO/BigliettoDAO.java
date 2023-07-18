@@ -37,4 +37,20 @@ public class BigliettoDAO {
 		}
 	}
 	
+	public static Biglietto getCode(String codice) {
+		Biglietto b = null;
+		try {
+			MainProject.em.getTransaction().begin();
+			b = MainProject.em.find(Biglietto.class, codice);
+			MainProject.em.getTransaction().commit();
+			MainProject.log.info(b.toString());
+			
+			
+		} catch (Exception e) {
+			MainProject.em.getTransaction().rollback();
+			MainProject.log.error(e.getMessage());
+			
+		}
+		return b;
+	}
 }

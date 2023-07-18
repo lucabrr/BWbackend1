@@ -1,6 +1,8 @@
 package com.epicode.controller;
 
 import java.time.LocalDate;
+import com.epicode.model.Tram;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,8 +44,12 @@ public class MainProject {
 		//DistributoreAutomaticoDAO.save(d1);
 		//Biglietto b2 = new Biglietto("bnb666", LocalDate.of(2023, 7, 10), DistributoreAutomaticoDAO.getByCode(" gfd123"), LocalDate.of(2023, 7, 10));
 		//BigliettoDAO.save(b2);
-		DistributoreAutomatico d1 = DistributoreAutomaticoDAO.getByCode(" gfd123");
-		d1.getDocumentiDiVenditaEmessi().forEach(e -> log.info(e.toString()));
+		//DistributoreAutomatico d1 = DistributoreAutomaticoDAO.getByCode(" gfd123");
+		//d1.getDocumentiDiVenditaEmessi().forEach(e -> log.info(e.toString()));
+		
+		
+		Biglietto biglietto = BigliettoDAO.getCode("try2233");
+		Tram tram =new Tram(null, 0, null, null, 0, 0, null, null);
 		
 		
 
