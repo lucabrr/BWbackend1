@@ -24,21 +24,116 @@ import javax.persistence.OneToOne;
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class MezziTrasporto {
 	@Id
-	@GeneratedValue
-	protected Long id;
-	@Column (nullable = false)
-	protected int posti;
-	@Column (nullable = false)
-	String immatricolazione;
-	@Column (nullable = false)
-	@Enumerated(EnumType.STRING)
-	Stato stato;
-	@OneToMany
+    @GeneratedValue
+    protected Long id;
+    @Column (nullable = false)
+    protected int posti;
+    @Column (nullable = false)
+    String immatricolazione;
+    @OneToMany
     protected List<StoricoMezzo>storico;
-	@OneToMany
-	protected List<BigliettoConvalidato>bigliettoConvalidato;
-	@OneToMany
-	protected List<Tratta> tratta;
+    @OneToMany
+    protected List<BigliettoConvalidato>bigliettoConvalidato;
+    @OneToMany
+    protected List<Tratta> tratta;
+    
+    
+    
+	public MezziTrasporto(int posti, String immatricolazione) {
+		super();
+		this.posti = posti;
+		this.immatricolazione = immatricolazione;
+		
+	}
+
+
+
+	public MezziTrasporto(Long id, int posti, String immatricolazione, List<StoricoMezzo> storico,
+			List<BigliettoConvalidato> bigliettoConvalidato, List<Tratta> tratta) {
+		super();
+		this.id = id;
+		this.posti = posti;
+		this.immatricolazione = immatricolazione;
+		this.storico = storico;
+		this.bigliettoConvalidato = bigliettoConvalidato;
+		this.tratta = tratta;
+	}
+
+
+
+	public MezziTrasporto() {
+		super();
+	}
+
+
+
+	public int getPosti() {
+		return posti;
+	}
+
+
+
+	public void setPosti(int posti) {
+		this.posti = posti;
+	}
+
+
+
+	public String getImmatricolazione() {
+		return immatricolazione;
+	}
+
+
+
+	public void setImmatricolazione(String immatricolazione) {
+		this.immatricolazione = immatricolazione;
+	}
+
+
+
+	public List<StoricoMezzo> getStorico() {
+		return storico;
+	}
+
+
+
+	public void setStorico(List<StoricoMezzo> storico) {
+		this.storico = storico;
+	}
+
+
+
+	public List<BigliettoConvalidato> getBigliettoConvalidato() {
+		return bigliettoConvalidato;
+	}
+
+
+
+	public void setBigliettoConvalidato(List<BigliettoConvalidato> bigliettoConvalidato) {
+		this.bigliettoConvalidato = bigliettoConvalidato;
+	}
+
+
+
+	public List<Tratta> getTratta() {
+		return tratta;
+	}
+
+
+
+	public void setTratta(List<Tratta> tratta) {
+		this.tratta = tratta;
+	}
+
+
+
+	public Long getId() {
+		return id;
+	}
+	
+	
+	
+	
 	
 
 }
