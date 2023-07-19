@@ -6,6 +6,8 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -24,18 +26,19 @@ public class MezziTrasporto {
 	@Id
 	@GeneratedValue
 	protected Long id;
-	
+	@Column (nullable = false)
 	protected int posti;
 	@Column (nullable = false)
-	
+	String immatricolazione;
+	@Column (nullable = false)
+	@Enumerated(EnumType.STRING)
+	Stato stato;
 	@OneToMany
-    protected List<StoricoMezzo>elencoMezzi;
-	
+    protected List<StoricoMezzo>storico;
 	@OneToMany
 	protected List<BigliettoConvalidato>bigliettoConvalidato;
-	
-	
-   private Tratta tratta;
+	@OneToMany
+	protected List<Tratta> tratta;
 	
 
 }
