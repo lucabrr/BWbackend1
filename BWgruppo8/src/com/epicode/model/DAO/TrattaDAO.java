@@ -27,6 +27,7 @@ public class TrattaDAO {
 		String query =  "SELECT t, COUNT(t), t.tempoEffettivo "
 				+ "FROM Tratta t WHERE t.mezzo.immatricolazione = :imm GROUP BY t";
 		Query q = MainProject.em.createQuery(query);
+		q.setParameter("imm", imm);
 			List<Object[]> lista = q.getResultList();
 			
 			for (Object[] result : lista) {

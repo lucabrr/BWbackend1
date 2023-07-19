@@ -17,6 +17,10 @@ public class Tratta {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	protected Long id;
 	@Column(nullable = false)
+	protected String partenza;
+	@Column(nullable = false)
+	protected String capolinea;
+	@Column(nullable = false)
 	String codiceTratta;
 	@ManyToOne
 	protected MezziTrasporto mezzo;
@@ -25,27 +29,40 @@ public class Tratta {
 	@Column(nullable = false)
 	protected Duration tempoEffettivo;
 	
-	public Tratta(Long id, String codiceTratta, MezziTrasporto mezzo, Duration tempoMedio, Duration tempoEffettivo) {
+	
+	public Tratta(String partenza, String capolinea, String codiceTratta, MezziTrasporto mezzo, Duration tempoMedio,
+			Duration tempoEffettivo) {
 		super();
-		this.id = id;
-		this.codiceTratta = codiceTratta;
-		this.mezzo = mezzo;
-		this.tempoMedio = tempoMedio;
-		this.tempoEffettivo = tempoEffettivo;
-		 if (mezzo.stato != Stato.SERVIZIO) {
-		        throw new IllegalStateException("Il mezzo non è attualmente in servizio.");
-		    }
-	}
-	public Tratta( String codiceTratta, MezziTrasporto mezzo, Duration tempoMedio, Duration tempoEffettivo) {
-		super();
+		this.partenza = partenza;
+		this.capolinea = capolinea;
 		this.codiceTratta = codiceTratta;
 		this.mezzo = mezzo;
 		this.tempoMedio = tempoMedio;
 		this.tempoEffettivo = tempoEffettivo;
 		if (mezzo.stato != Stato.SERVIZIO) {
-	        throw new IllegalStateException("Il mezzo non è attualmente in servizio.");
-	    }
+            throw new IllegalStateException("Il mezzo non è attualmente in servizio.");
+        }
 	}
+	
+	
+	
+	public Tratta(Long id, String partenza, String capolinea, String codiceTratta, MezziTrasporto mezzo,
+			Duration tempoMedio, Duration tempoEffettivo) {
+		super();
+		this.id = id;
+		this.partenza = partenza;
+		this.capolinea = capolinea;
+		this.codiceTratta = codiceTratta;
+		this.mezzo = mezzo;
+		this.tempoMedio = tempoMedio;
+		this.tempoEffettivo = tempoEffettivo;
+		if (mezzo.stato != Stato.SERVIZIO) {
+            throw new IllegalStateException("Il mezzo non è attualmente in servizio.");
+        }
+	}
+
+
+
 	public Tratta() {
 		super();	
 	}
@@ -67,17 +84,47 @@ public class Tratta {
 	public void setTempoMedio(Duration tempoMedio) {
 		this.tempoMedio = tempoMedio;
 	}
+	
+	public String getPartenza() {
+		return partenza;
+	}
+
+
+
+	public void setPartenza(String partenza) {
+		this.partenza = partenza;
+	}
+
+
+
+	public String getCapolinea() {
+		return capolinea;
+	}
+
+
+
+	public void setCapolinea(String capolinea) {
+		this.capolinea = capolinea;
+	}
+
+
+
 	public Duration getTempoEffettivo() {
 		return tempoEffettivo;
 	}
 	public void setTempoEffettivo(Duration tempoEffettivo) {
 		this.tempoEffettivo = tempoEffettivo;
 	}
+
+
+
 	@Override
 	public String toString() {
-		return "Tratta [codiceTratta=" + codiceTratta + ", mezzo=" + mezzo + ", tempoMedio=" + tempoMedio
-				+ ", tempoEffettivo=" + tempoEffettivo + "]";
+		return "Tratta [id=" + id + ", partenza=" + partenza + ", capolinea=" + capolinea + ", codiceTratta="
+				+ codiceTratta + ", mezzo=" + mezzo + ", tempoMedio=" + tempoMedio + ", tempoEffettivo="
+				+ tempoEffettivo + "]";
 	}
+	
 	
 	
 	

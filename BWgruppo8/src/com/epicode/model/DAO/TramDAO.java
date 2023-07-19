@@ -23,15 +23,17 @@ public class TramDAO {
 	}
 	
 	public static Tram getByCode(String codice) {
+		Tram t = new Tram();
 		try {
-			String query = "SELECT d FROM Biglietto d WHERE d.codice = :codice";
+			String query = "SELECT d FROM Tram d WHERE d.immatricolazione = :codice";
 			Query q = MainProject.em.createQuery(query);
 			q.setParameter("codice",codice);
-			  return (Tram) q.getSingleResult();	
+			  t =  (Tram) q.getSingleResult();	
+			  return t;
 		} catch (Exception e) {
 			e.printStackTrace();
 			MainProject.log.error(e.getMessage());
-		} return null;
+		} return t;
 		
 	}
 

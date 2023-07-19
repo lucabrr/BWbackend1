@@ -1,5 +1,6 @@
 package com.epicode.controller;
 
+import java.time.Duration;
 import java.time.LocalDate;
 import com.epicode.model.Tram;
 
@@ -14,6 +15,7 @@ import org.slf4j.LoggerFactory;
 import com.epicode.model.Abbonamento;
 import com.epicode.model.Biglietto;
 import com.epicode.model.Autobus;
+import com.epicode.model.Tratta;
 import com.epicode.model.AutobusDAO;
 import com.epicode.model.DistributoreAutomatico;
 import com.epicode.model.DocumentoVendita;
@@ -30,6 +32,7 @@ import com.epicode.model.DAO.DocumentoVenditaDAO;
 import com.epicode.model.DAO.RivenditoreAutorizzatoDAO;
 import com.epicode.model.DAO.TesseraDAO;
 import com.epicode.model.DAO.TramDAO;
+import com.epicode.model.DAO.TrattaDAO;
 import com.epicode.model.DAO.UtenteDAO;
 import com.epicode.util.JpaUtil;
 
@@ -77,6 +80,11 @@ public class MainProject {
 		 //Autobus a1 = new Autobus (60,"VS962BN",Stato.SERVIZIO,"Manuale");
 		 //Autobus a2 = new Autobus (45,"CV128GH",Stato.SERVIZIO,"Automatico");
 		 //AutobusDAO.save(a2);
+		
+		//Tratta r1 = new Tratta("Roma", "Milano","tr2565", TramDAO.getByCode("AB123CV"),Duration.ofMinutes(90), Duration.ofMinutes(80));
+		//TrattaDAO.save(r1);
+		
+		TrattaDAO.getNtratte("AB123CV");
 		 
 	}
 }
