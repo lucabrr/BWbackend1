@@ -14,14 +14,36 @@ public class Autobus extends MezziTrasporto {
 
 	private String cambio;
 
-	public Autobus(int posti, String immatricolazione, String cambio) {
-		super(posti, immatricolazione);
+	
+
+	public Autobus(int posti, String immatricolazione, Stato stato, String cambio) {
+		super(posti, immatricolazione, stato);
 		this.cambio = cambio;
 	}
 
 
+
 	public Autobus() {
 		super();
+	}
+
+
+
+	public String getCambio() {
+		return cambio;
+	}
+
+
+
+	public void setCambio(String cambio) {
+		this.cambio = cambio;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "Autobus [cambio=" + cambio + "]";
 	}
 
 

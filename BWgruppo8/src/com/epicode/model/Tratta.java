@@ -7,7 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-import ch.qos.logback.core.util.Duration;
+import java.time.Duration;
 
 @Entity
 public class Tratta {

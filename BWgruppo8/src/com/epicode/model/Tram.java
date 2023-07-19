@@ -11,10 +11,11 @@ public class Tram extends MezziTrasporto{
 	private int vagoni;
 	
 
-	
 
-	public Tram(int posti, String immatricolazione, int vagoni) {
-		super(posti, immatricolazione);
+
+
+	public Tram(int posti, String immatricolazione, Stato stato, int vagoni) {
+		super(posti, immatricolazione, stato);
 		this.vagoni = vagoni;
 	}
 
@@ -37,6 +38,14 @@ public class Tram extends MezziTrasporto{
 
 	public void setVagoni(int vagoni) {
 		this.vagoni = vagoni;
+	}
+
+
+
+
+	@Override
+	public String toString() {
+		return "Tram [vagoni=" + vagoni + "]";
 	}
 
 	

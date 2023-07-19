@@ -12,6 +12,7 @@ public class TramDAO {
 			MainProject.em.getTransaction().begin();
 			MainProject.em.persist(a);
 			MainProject.em.getTransaction().commit();
+			MainProject.log.info("Tram: "+ a.getImmatricolazione() +" creato");
 			
 		}catch (Exception e) {
 			MainProject.em.getTransaction().rollback();

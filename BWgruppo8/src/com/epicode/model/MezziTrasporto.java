@@ -31,6 +31,7 @@ public class MezziTrasporto {
     @Column (nullable = false)
     String immatricolazione;
     @Column (nullable = false)
+    @Enumerated(EnumType.STRING)
     Stato stato ;
     @OneToMany
     protected List<StoricoMezzo>storico;
@@ -40,13 +41,13 @@ public class MezziTrasporto {
     protected List<Tratta> tratta;
     
     
-    
-	public MezziTrasporto(int posti, String immatricolazione) {
+	public MezziTrasporto(int posti, String immatricolazione, Stato stato) {
 		super();
 		this.posti = posti;
 		this.immatricolazione = immatricolazione;
-		
+		this.stato = stato;
 	}
+
 
 
 

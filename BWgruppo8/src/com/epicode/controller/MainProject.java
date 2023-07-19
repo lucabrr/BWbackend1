@@ -13,10 +13,13 @@ import org.slf4j.LoggerFactory;
 
 import com.epicode.model.Abbonamento;
 import com.epicode.model.Biglietto;
+import com.epicode.model.Autobus;
+import com.epicode.model.AutobusDAO;
 import com.epicode.model.DistributoreAutomatico;
 import com.epicode.model.DocumentoVendita;
 import com.epicode.model.Periodicita;
 import com.epicode.model.RivenditoreAutorizzato;
+import com.epicode.model.Stato;
 import com.epicode.model.Status;
 import com.epicode.model.Tessera;
 import com.epicode.model.Utente;
@@ -67,7 +70,13 @@ public class MainProject {
 		//DocumentoVenditaDAO.controlloAbbonamento("tes1212");
 		//provaprova
 		
-		//Tram t1 = new Tram(30, "AB123CV",4);
-		//TramDAO.save(t1);
+		//Tram t1 = new Tram(30, "AB123CV",Stato.SERVIZIO,4);
+		//Tram t2 = new Tram(40,"CS988CV",Stato.SERVIZIO,5);
+		//TramDAO.save(t2);
+		
+		 //Autobus a1 = new Autobus (60,"VS962BN",Stato.SERVIZIO,"Manuale");
+		 //Autobus a2 = new Autobus (45,"CV128GH",Stato.SERVIZIO,"Automatico");
+		 //AutobusDAO.save(a2);
+		 
 	}
 }
