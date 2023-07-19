@@ -1,5 +1,7 @@
 package com.epicode.model;
 
+import java.time.Duration;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,7 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-import ch.qos.logback.core.util.Duration;
+
 
 @Entity
 public class Tratta {
