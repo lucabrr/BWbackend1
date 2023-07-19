@@ -30,6 +30,8 @@ public class MezziTrasporto {
     protected int posti;
     @Column (nullable = false)
     String immatricolazione;
+    @Column (nullable = false)
+    Stato stato ;
     @OneToMany
     protected List<StoricoMezzo>storico;
     @OneToMany
