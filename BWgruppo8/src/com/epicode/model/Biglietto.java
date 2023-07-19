@@ -4,6 +4,8 @@ import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -11,8 +13,8 @@ public class Biglietto extends DocumentoVendita {
 	
 	private LocalDate dataConvalida;
 	
-	@OneToOne(mappedBy = "biglietto")
-	private MezziTrasporto trasporto;
+
+
 
 	public Biglietto(Long id, String codice, LocalDate dataEmissione, PuntoVendita puntoVendita,
 			LocalDate dataConvalida) {
