@@ -7,7 +7,7 @@ import com.epicode.model.DistributoreAutomatico;
 import com.epicode.model.Tram;
 
 public class TramDAO {
-	public void save(Tram a) {
+	public static void save(Tram a) {
 		try {
 			MainProject.em.getTransaction().begin();
 			MainProject.em.persist(a);

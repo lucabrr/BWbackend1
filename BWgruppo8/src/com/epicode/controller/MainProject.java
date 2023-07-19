@@ -26,6 +26,7 @@ import com.epicode.model.DAO.DistributoreAutomaticoDAO;
 import com.epicode.model.DAO.DocumentoVenditaDAO;
 import com.epicode.model.DAO.RivenditoreAutorizzatoDAO;
 import com.epicode.model.DAO.TesseraDAO;
+import com.epicode.model.DAO.TramDAO;
 import com.epicode.model.DAO.UtenteDAO;
 import com.epicode.util.JpaUtil;
 
@@ -64,6 +65,9 @@ public class MainProject {
 		//AbbonamentoDAO.save(a2);
 		//System.out.println(DocumentoVenditaDAO.getAllDocumentiEmessi(LocalDate.of(2022, 6, 10),LocalDate.of(2024, 10, 10),DistributoreAutomaticoDAO.getByCode("db9823")));
 		//DocumentoVenditaDAO.controlloAbbonamento("tes1212");
-		//provaprova		
+		//provaprova
+		
+		//Tram t1 = new Tram(30, "AB123CV",4);
+		//TramDAO.save(t1);
 	}
 }

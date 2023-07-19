@@ -30,6 +30,30 @@ public class StoricoMezzo {
     
     @Column (nullable = false)
     private LocalDate dataFine;
+
+	public StoricoMezzo(Stato status, MezziTrasporto mezzoAssociato, LocalDate dataInizio, LocalDate dataFine) {
+		super();
+		this.status = status;
+		this.mezzoAssociato = mezzoAssociato;
+		this.dataInizio = dataInizio;
+		this.dataFine = dataFine;
+	}
+
+
+	public StoricoMezzo(Long id, Stato status, MezziTrasporto mezzoAssociato, LocalDate dataInizio,
+			LocalDate dataFine) {
+		super();
+		this.id = id;
+		this.status = status;
+		this.mezzoAssociato = mezzoAssociato;
+		this.dataInizio = dataInizio;
+		this.dataFine = dataFine;
+	}
+
+
+	public StoricoMezzo() {
+		super();
+	}
     
 
     
