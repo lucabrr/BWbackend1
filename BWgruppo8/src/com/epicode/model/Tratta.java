@@ -1,6 +1,7 @@
 package com.epicode.model;
 
 import java.time.Duration;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import java.time.Duration;
 
@@ -22,43 +24,37 @@ public class Tratta {
 	protected String capolinea;
 	@Column(nullable = false)
 	String codiceTratta;
-	@ManyToOne
-	protected MezziTrasporto mezzo;
+	@OneToMany
+	protected List<MezziTrasporto> mezzi;
 	@Column(nullable = false)
 	protected Duration tempoMedio;
 	@Column(nullable = false)
 	protected Duration tempoEffettivo;
 	
 	
-	public Tratta(String partenza, String capolinea, String codiceTratta, MezziTrasporto mezzo, Duration tempoMedio,
+	public Tratta(String partenza, String capolinea, String codiceTratta, Duration tempoMedio,
 			Duration tempoEffettivo) {
 		super();
 		this.partenza = partenza;
 		this.capolinea = capolinea;
 		this.codiceTratta = codiceTratta;
-		this.mezzo = mezzo;
 		this.tempoMedio = tempoMedio;
 		this.tempoEffettivo = tempoEffettivo;
-		if (mezzo.stato != Stato.SERVIZIO) {
-            throw new IllegalStateException("Il mezzo non è attualmente in servizio.");
-        }
+		
 	}
 	
 	
 	
-	public Tratta(Long id, String partenza, String capolinea, String codiceTratta, MezziTrasporto mezzo,
+	public Tratta(Long id, String partenza, String capolinea, String codiceTratta,
 			Duration tempoMedio, Duration tempoEffettivo) {
 		super();
 		this.id = id;
 		this.partenza = partenza;
 		this.capolinea = capolinea;
 		this.codiceTratta = codiceTratta;
-		this.mezzo = mezzo;
 		this.tempoMedio = tempoMedio;
 		this.tempoEffettivo = tempoEffettivo;
-		if (mezzo.stato != Stato.SERVIZIO) {
-            throw new IllegalStateException("Il mezzo non è attualmente in servizio.");
-        }
+		
 	}
 
 
@@ -72,12 +68,7 @@ public class Tratta {
 	public void setCodiceTratta(String codiceTratta) {
 		this.codiceTratta = codiceTratta;
 	}
-	public MezziTrasporto getMezzo() {
-		return mezzo;
-	}
-	public void setMezzo(MezziTrasporto mezzo) {
-		this.mezzo = mezzo;
-	}
+	
 	public Duration getTempoMedio() {
 		return tempoMedio;
 	}
@@ -121,7 +112,7 @@ public class Tratta {
 	@Override
 	public String toString() {
 		return "Tratta [id=" + id + ", partenza=" + partenza + ", capolinea=" + capolinea + ", codiceTratta="
-				+ codiceTratta + ", mezzo=" + mezzo + ", tempoMedio=" + tempoMedio + ", tempoEffettivo="
+				+ codiceTratta + ", tempoMedio=" + tempoMedio + ", tempoEffettivo="
 				+ tempoEffettivo + "]";
 	}
 	

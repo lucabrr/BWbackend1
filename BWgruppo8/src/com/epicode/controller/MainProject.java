@@ -16,7 +16,7 @@ import com.epicode.model.Abbonamento;
 import com.epicode.model.Biglietto;
 import com.epicode.model.Autobus;
 import com.epicode.model.Tratta;
-import com.epicode.model.AutobusDAO;
+
 import com.epicode.model.DistributoreAutomatico;
 import com.epicode.model.DocumentoVendita;
 import com.epicode.model.Periodicita;
@@ -75,16 +75,18 @@ public class MainProject {
 		
 		//Tram t1 = new Tram(30, "AB123CV",Stato.SERVIZIO,4);
 		//Tram t2 = new Tram(40,"CS988CV",Stato.SERVIZIO,5);
-		//TramDAO.save(t2);
+		//Tram t3 = new Tram(50, "im5455", Stato.SERVIZIO,5);
+		//TramDAO.save(t3);
 		
 		 //Autobus a1 = new Autobus (60,"VS962BN",Stato.SERVIZIO,"Manuale");
 		 //Autobus a2 = new Autobus (45,"CV128GH",Stato.SERVIZIO,"Automatico");
 		 //AutobusDAO.save(a2);
 		
-		//Tratta r1 = new Tratta("Roma", "Milano","tr2565", TramDAO.getByCode("AB123CV"),Duration.ofMinutes(90), Duration.ofMinutes(80));
+		//Tratta r1 = new Tratta("Roma", "Milano","tr2565", TramDAO.getByCode("im5455"),Duration.ofMinutes(90), Duration.ofMinutes(80));
+		//Tratta r1 = new Tratta("Roma", "Milano","rm3000", TramDAO.getByCode("im5455"),Duration.ofMinutes(90), Duration.ofMinutes(100));
 		//TrattaDAO.save(r1);
 		
-		TrattaDAO.getNtratte("AB123CV");
+		//TrattaDAO.getNtratte("im5455");
 		 
 	}
 }
