@@ -2649,3 +2649,56 @@ Caused by: org.hibernate.MappingException: Could not determine type for: ch.qos.
 2023-07-20 09:49:49,180 [main] INFO  com.epicode.controller.MainProject - Mezzo in Manutenzione non si può convalidare un biglietto
 2023-07-20 09:49:49,193 [main] INFO  com.epicode.controller.MainProject - Biglietto: try2233 modificato
 2023-07-20 09:49:49,222 [main] INFO  com.epicode.controller.MainProject - Biglietto: Biglietto [dataConvalida=2023-07-20, puntoVendita=null, Id()=25, Codice=try2233, DataEmissione=2022-07-05] creato
+2023-07-20 09:57:14,573 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: BWgruppo8]
+2023-07-20 09:57:14,636 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-07-20 09:57:14,872 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-07-20 09:57:15,140 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2023-07-20 09:57:15,145 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/buildweek1]
+2023-07-20 09:57:15,146 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2023-07-20 09:57:15,146 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2023-07-20 09:57:15,150 [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2023-07-20 09:57:15,509 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-07-20 09:57:16,604 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@667dcaad] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-07-20 09:57:16,872 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-20 09:57:17,068 [main] INFO  com.epicode.controller.MainProject - Biglietto: try2233 modificato
+2023-07-20 09:57:17,094 [main] INFO  com.epicode.controller.MainProject - Mezzo in Manutenzione non si può convalidare un biglietto
+2023-07-20 09:57:17,122 [main] INFO  com.epicode.controller.MainProject - Biglietto: Biglietto [dataConvalida=2023-07-20, puntoVendita=null, Id()=25, Codice=try2233, DataEmissione=2022-07-05] creato
+2023-07-20 09:57:57,024 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: BWgruppo8]
+2023-07-20 09:57:57,092 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-07-20 09:57:57,337 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-07-20 09:57:57,602 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2023-07-20 09:57:57,607 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/buildweek1]
+2023-07-20 09:57:57,607 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2023-07-20 09:57:57,607 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2023-07-20 09:57:57,611 [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2023-07-20 09:57:57,969 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-07-20 09:57:59,038 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@667dcaad] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-07-20 09:57:59,281 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-20 09:57:59,516 [main] INFO  com.epicode.controller.MainProject - Mezzo in Manutenzione non si può convalidare un biglietto
+2023-07-20 09:57:59,531 [main] INFO  com.epicode.controller.MainProject - Biglietto: try2233 modificato
+2023-07-20 09:57:59,564 [main] INFO  com.epicode.controller.MainProject - Biglietto: Biglietto [dataConvalida=2023-07-20, puntoVendita=null, Id()=25, Codice=try2233, DataEmissione=2022-07-05] creato
+2023-07-20 10:02:48,181 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: BWgruppo8]
+2023-07-20 10:02:48,254 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-07-20 10:02:48,514 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-07-20 10:02:48,826 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2023-07-20 10:02:48,834 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/buildweek1]
+2023-07-20 10:02:48,835 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2023-07-20 10:02:48,836 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2023-07-20 10:02:48,844 [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2023-07-20 10:02:49,417 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-07-20 10:02:50,676 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3bc69ce9] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-07-20 10:02:50,959 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-20 10:03:25,906 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: BWgruppo8]
+2023-07-20 10:03:25,988 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-07-20 10:03:26,229 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-07-20 10:03:26,522 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2023-07-20 10:03:26,527 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/buildweek1]
+2023-07-20 10:03:26,528 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=postgres}
+2023-07-20 10:03:26,528 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2023-07-20 10:03:26,531 [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2023-07-20 10:03:26,967 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-07-20 10:03:28,279 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@61ffd148] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-07-20 10:03:28,545 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-20 10:03:28,791 [main] INFO  com.epicode.controller.MainProject - Mezzo in Manutenzione non si può convalidare un biglietto
+2023-07-20 10:03:28,809 [main] INFO  com.epicode.controller.MainProject - Biglietto: try2233 modificato
+2023-07-20 10:03:28,841 [main] INFO  com.epicode.controller.MainProject - Biglietto: Biglietto [dataConvalida=2023-07-20, puntoVendita=null, Id()=25, Codice=try2233, DataEmissione=2022-07-05] creato

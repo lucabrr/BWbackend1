@@ -103,8 +103,8 @@ public class MainProject {
 		//StoricoMezzoDAO.inManutenzione(name);
 		
 		
-		 BigliettoConvalidato  b = new BigliettoConvalidato (BigliettoConvalidatoDAO.getMezzo("GH857KL"),BigliettoConvalidatoDAO.convalida("try2233"));
-		 BigliettoConvalidatoDAO.save(b);
+		BigliettoConvalidato  b = new BigliettoConvalidato (BigliettoConvalidatoDAO.getMezzo("GH857KL"),BigliettoConvalidatoDAO.convalida("try2233"));
+		BigliettoConvalidatoDAO.save(b);
 		 
 	}
 }
