@@ -28,7 +28,7 @@ public class MezziTrasporto {
     protected Long id;
     @Column (nullable = false)
     protected int posti;
-    @Column (nullable = false)
+    @Column (nullable = false, unique = true)
     String immatricolazione;
     @Column (nullable = false)
     @Enumerated(EnumType.STRING)
@@ -136,9 +136,17 @@ public class MezziTrasporto {
 
 
 	public Stato getStato() {
-		// TODO Auto-generated method stub
-		return null;
+		return stato;
 	}
+
+
+
+
+
+
+
+
+	
 	
 	
 	

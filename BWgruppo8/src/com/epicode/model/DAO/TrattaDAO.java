@@ -7,12 +7,18 @@ import javax.persistence.Query;
 
 import com.epicode.controller.MainProject;
 import com.epicode.model.MezziTrasporto;
+import com.epicode.model.Stato;
 import com.epicode.model.Tratta;
 
 public class TrattaDAO {
 
 	
 	public static void save (Tratta t) {
+		if(t.getMezzo().getStato()!= Stato.SERVIZIO) {
+			MainProject.log.info("il mezzo "+ t.getMezzo().getImmatricolazione() + " è in manutenzione, non può essere associato a una tratta" );
+			
+			return;
+		}
 		try {
 			MainProject.em.getTransaction().begin();
 			MainProject.em.persist(t);
@@ -60,5 +66,5 @@ public class TrattaDAO {
 	   	    System.out.println("Tempo effettivo per la tratta: " + tempoEffettivo);
 	    }
 	    System.out.println("-----------------------------------");
-	}
+	}	
 }

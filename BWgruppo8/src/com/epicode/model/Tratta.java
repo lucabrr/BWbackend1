@@ -62,8 +62,6 @@ public class Tratta {
 		
 	}
 
-
-
 	public Tratta() {
 		super();	
 	}
@@ -120,6 +118,16 @@ public class Tratta {
 				+ codiceTratta + ", tempoMedio=" + tempoMedio + ", tempoEffettivo="
 				+ tempoEffettivo + "]";
 	}
+
+
+
+	public MezziTrasporto getMezzo() {
+		return mezzo;
+	}
+
+
+
+	
 	
 	
 	

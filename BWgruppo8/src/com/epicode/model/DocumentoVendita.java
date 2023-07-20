@@ -18,7 +18,7 @@ public class DocumentoVendita {
 	@Id
 	@GeneratedValue
 	private Long id;
-	@Column(nullable = false)
+	@Column(nullable = false, unique = true)
 	private String codice;
 	@Column(nullable = false)
 	private LocalDate dataEmissione;

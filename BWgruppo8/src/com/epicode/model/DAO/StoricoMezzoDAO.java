@@ -18,7 +18,7 @@ public class StoricoMezzoDAO {
 			MainProject.em.getTransaction().begin();
 			MainProject.em.persist(a);
 			MainProject.em.getTransaction().commit();
-			MainProject.log.info("Storico Mezzo: "+ a.getMezzoAssociato() +" creato");
+			MainProject.log.info("Storico del Mezzo: "+ a.getMezzoAssociato().getImmatricolazione() +" creato");
 			
 		}catch (Exception e) {
 			MainProject.em.getTransaction().rollback();
@@ -47,21 +47,21 @@ public class StoricoMezzoDAO {
 
 	
 	public static List<StoricoMezzo>inServizio(String codice) {
-	    List<StoricoMezzo> mezziInManutenzione = null;
+	    List<StoricoMezzo> mezziInServizio = null;
 	    try {
 	        String query = "SELECT sm FROM StoricoMezzo sm WHERE sm.status = :SERVIZIO AND sm.mezzoAssociato.immatricolazione = :codice";
 	        Query q = MainProject.em.createQuery(query, StoricoMezzo.class);
 	        q.setParameter("SERVIZIO", Stato.SERVIZIO);
 	        q.setParameter("codice", codice);
-	        mezziInManutenzione = q.getResultList();
-	        for (StoricoMezzo storicoMezzo : mezziInManutenzione) {
-	            System.out.println(storicoMezzo.toString());
+	        mezziInServizio = q.getResultList();
+	        for (StoricoMezzo storicoMezzo : mezziInServizio) {
+	            System.out.println("Data inizio servizio: "+storicoMezzo.getDataInizio() + " / " +"Data fine servizio: "+storicoMezzo.getDataFine());
 	        }
 	    } catch (Exception e) {
 	        e.printStackTrace();
 	        MainProject.log.error(e.getMessage());
 	    }
-	    return mezziInManutenzione;
+	    return mezziInServizio;
 	}
 	
 	
@@ -74,7 +74,7 @@ public class StoricoMezzoDAO {
 	        q.setParameter("codice", codice);
 	        mezziInManutenzione = q.getResultList();
 	        for (StoricoMezzo storicoMezzo : mezziInManutenzione) {
-	            System.out.println(storicoMezzo.toString());
+	        	System.out.println("Data inizio manutenzione: "+storicoMezzo.getDataInizio() + " / " +"Data fine manutenzione: "+storicoMezzo.getDataFine());
 	        }
 	    } catch (Exception e) {
 	        e.printStackTrace();
