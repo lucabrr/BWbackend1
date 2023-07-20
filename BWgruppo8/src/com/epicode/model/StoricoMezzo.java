@@ -22,7 +22,7 @@ public class StoricoMezzo {
 	private Stato status;
 	
     @ManyToOne
-    @JoinColumn(name = "codice_immatricolazione")
+ 
     protected MezziTrasporto mezzoAssociato;
     
     @Column (nullable = false)

@@ -36,10 +36,16 @@ public class BigliettoConvalidatoDAO {
 	        String query = "SELECT m FROM Biglietto m WHERE m.codice = :codice";
 	        Query q = MainProject.em.createQuery(query);
 	        q.setParameter("codice", codice);
-	        t = (Biglietto) q.getSingleResult();    
-	        t.setDataConvalida(LocalDate.now());
-	        MainProject.em.merge(t);
-	        MainProject.log.info("Biglietto: "+ t.getCodice()+" modificato");
+	        t = (Biglietto) q.getSingleResult();
+	        if (t.getConvalidato().equals(false)) {
+	            t.setDataConvalida(LocalDate.now());
+	            t.setConvalidato(true);
+	            MainProject.em.merge(t);
+	        } else {
+	            MainProject.log.error("Il biglietto è stato vidimato e non può essere utilizzato");
+	            return null;
+	        }
+	        
 	    } catch (NoResultException ex) {
 	        MainProject.log.error("Biglietto non trovato per il codice: " + codice);
 	    } catch (Exception e) {
@@ -49,27 +55,14 @@ public class BigliettoConvalidatoDAO {
 	    return t;
 	}
 
-	
 	public static MezziTrasporto getMezzo(String codice) {
 	    MezziTrasporto y = null;
 
 	    try {
-	        String query1 = "SELECT sm FROM StoricoMezzo sm WHERE sm.status = :MANUTENZIONE AND sm.mezzoAssociato.immatricolazione = :codice";
-	        Query q1 = MainProject.em.createQuery(query1);
-	        q1.setParameter("MANUTENZIONE", Stato.MANUTENZIONE);
-	        q1.setParameter("codice", codice);
-
-	        StoricoMezzo storicoMezzo = (StoricoMezzo) q1.getSingleResult();
-
-	        if (storicoMezzo != null) {
-	            MainProject.log.info("Mezzo in Manutenzione non si può convalidare un biglietto");
-	        } else {
-	            String query2 = "SELECT m FROM MezziTrasporto m WHERE m.immatricolazione = :codice";
-	            Query q2 = MainProject.em.createQuery(query2);
-	            q2.setParameter("codice", codice);
-	            y = (MezziTrasporto) q2.getSingleResult();
-	        }
-
+	        String query2 = "SELECT m FROM MezziTrasporto m WHERE m.immatricolazione = :codice";
+	        Query q2 = MainProject.em.createQuery(query2);
+	        q2.setParameter("codice", codice);
+	        y = (MezziTrasporto) q2.getSingleResult();
 	    } catch (NoResultException ex) {
 	        MainProject.log.error("Mezzo non trovato per il codice: " + codice);
 	    } catch (Exception e) {
@@ -79,8 +72,7 @@ public class BigliettoConvalidatoDAO {
 	    return y;
 	}
 
-}
-
-
 	
 
+
+}

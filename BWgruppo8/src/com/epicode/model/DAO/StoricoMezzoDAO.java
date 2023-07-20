@@ -5,10 +5,12 @@ import java.util.List;
 import javax.persistence.Query;
 
 import com.epicode.controller.MainProject;
+import com.epicode.model.BigliettoConvalidato;
 import com.epicode.model.MezziTrasporto;
 import com.epicode.model.Stato;
 import com.epicode.model.StoricoMezzo;
 import com.epicode.model.Tram;
+import com.epicode.model.Biglietto;
 
 public class StoricoMezzoDAO {
 	public static void save(StoricoMezzo a) {
@@ -48,7 +50,6 @@ public class StoricoMezzoDAO {
 	    List<StoricoMezzo> mezziInManutenzione = null;
 	    try {
 	        String query = "SELECT sm FROM StoricoMezzo sm WHERE sm.status = :SERVIZIO AND sm.mezzoAssociato.immatricolazione = :codice";
-
 	        Query q = MainProject.em.createQuery(query, StoricoMezzo.class);
 	        q.setParameter("SERVIZIO", Stato.SERVIZIO);
 	        q.setParameter("codice", codice);
@@ -68,7 +69,6 @@ public class StoricoMezzoDAO {
 	    List<StoricoMezzo> mezziInManutenzione = null;
 	    try {
 	        String query = "SELECT sm FROM StoricoMezzo sm WHERE sm.status = :MANUTENZIONE AND sm.mezzoAssociato.immatricolazione = :codice";
-
 	        Query q = MainProject.em.createQuery(query, StoricoMezzo.class);
 	        q.setParameter("MANUTENZIONE", Stato.MANUTENZIONE);
 	        q.setParameter("codice", codice);
@@ -83,8 +83,30 @@ public class StoricoMezzoDAO {
 	    return mezziInManutenzione;
 	}
 	
+	public static List<BigliettoConvalidato> bigliettiVidimati(String codiceMezzo) {
+	    List<BigliettoConvalidato> totale = null;
+	    try {
+	        String query = "SELECT bc FROM BigliettoConvalidato bc WHERE bc.mezzo.immatricolazione = :codiceMezzo";
+	        Query q = MainProject.em.createQuery(query, BigliettoConvalidato.class);
+	        q.setParameter("codiceMezzo", codiceMezzo);
+	        totale = q.getResultList();
+	        
+	        for (BigliettoConvalidato biglietto : totale) {
+	            System.out.println(biglietto.toString());
+	        }
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        MainProject.log.error(e.getMessage());
+	    }
+	    return totale;
+	}
 	
-	
-
+	public static void numeroBiglietti(String codiceMezzo) {
+		String query = "SELECT COUNT(b) FROM BigliettoConvalidato b WHERE b.mezzo.immatricolazione = :codiceMezzo";
+		 Query q = MainProject.em.createQuery(query);
+	        q.setParameter("codiceMezzo", codiceMezzo);
+	        Long num = (Long) q.getSingleResult();
+	        MainProject.log.info("il mezzo ha convalidato " + num + " Biglietti");
+	}
 
 }

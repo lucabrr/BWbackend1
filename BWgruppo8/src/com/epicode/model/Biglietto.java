@@ -12,6 +12,9 @@ import javax.persistence.OneToOne;
 public class Biglietto extends DocumentoVendita {
 	
 	private LocalDate dataConvalida;
+	@Column(name = "convalidato")
+	private Boolean convalidato = false;
+
 	
 
 
@@ -20,11 +23,15 @@ public class Biglietto extends DocumentoVendita {
 			LocalDate dataConvalida) {
 		super(id, codice, dataEmissione, puntoVendita);
 		this.dataConvalida = dataConvalida;
+		
+		
 	}
 
-	public Biglietto(String codice, LocalDate dataEmissione, PuntoVendita puntoVendita, LocalDate dataConvalida) {
+	public Biglietto(String codice, LocalDate dataEmissione,PuntoVendita puntoVendita, LocalDate dataConvalida) {
 		super(codice, dataEmissione, puntoVendita);
 		this.dataConvalida = dataConvalida;
+		
+		
 	}
 
 	public Biglietto() {
@@ -32,6 +39,14 @@ public class Biglietto extends DocumentoVendita {
 	}
 
 	
+
+	public Boolean getConvalidato() {
+		return convalidato;
+	}
+
+	public void setConvalidato(Boolean convalidato) {
+		this.convalidato = convalidato;
+	}
 
 	public LocalDate getDataConvalida() {
 		return dataConvalida;
@@ -45,6 +60,11 @@ public class Biglietto extends DocumentoVendita {
 	public String toString() {
 		return "Biglietto [dataConvalida=" + dataConvalida + ", puntoVendita=" + puntoVendita + ", Id()=" + getId()
 				+ ", Codice=" + getCodice() + ", DataEmissione=" + getDataEmissione() + "]";
+	}
+
+	public MezziTrasporto getMezzo() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
