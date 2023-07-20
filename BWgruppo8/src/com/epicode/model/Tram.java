@@ -42,11 +42,16 @@ public class Tram extends MezziTrasporto{
 
 
 
-
-	@Override
-	public String toString() {
-		return "Tram [vagoni=" + vagoni + "]";
-	}
+	 @Override
+	    public String toString() {
+	        return "Tram{" +
+	                "id=" + id +
+	                ", posti=" + posti +
+	                ", immatricolazione='" + immatricolazione + '\'' +
+	                ", stato=" + stato +
+	                ", vagoni=" + vagoni +
+	                '}';
+	    }
 
 	
 	 

@@ -22,14 +22,18 @@ import com.epicode.model.DocumentoVendita;
 import com.epicode.model.Periodicita;
 import com.epicode.model.RivenditoreAutorizzato;
 import com.epicode.model.Stato;
+import com.epicode.model.StoricoMezzo;
+import com.epicode.model. BigliettoConvalidato;
 import com.epicode.model.Status;
 import com.epicode.model.Tessera;
 import com.epicode.model.Utente;
 import com.epicode.model.DAO.AbbonamentoDAO;
+import com.epicode.model.DAO.BigliettoConvalidatoDAO;
 import com.epicode.model.DAO.BigliettoDAO;
 import com.epicode.model.DAO.DistributoreAutomaticoDAO;
 import com.epicode.model.DAO.DocumentoVenditaDAO;
 import com.epicode.model.DAO.RivenditoreAutorizzatoDAO;
+import com.epicode.model.DAO.StoricoMezzoDAO;
 import com.epicode.model.DAO.TesseraDAO;
 import com.epicode.model.DAO.TramDAO;
 import com.epicode.model.DAO.TrattaDAO;
@@ -75,7 +79,8 @@ public class MainProject {
 		
 		//Tram t1 = new Tram(30, "AB123CV",Stato.SERVIZIO,4);
 		//Tram t2 = new Tram(40,"CS988CV",Stato.SERVIZIO,5);
-		//TramDAO.save(t2);
+		//Tram t3 = new Tram(25,"GH857KL",Stato.MANUTENZIONE,2);
+		//TramDAO.save(t3);
 		
 		 //Autobus a1 = new Autobus (60,"VS962BN",Stato.SERVIZIO,"Manuale");
 		 //Autobus a2 = new Autobus (45,"CV128GH",Stato.SERVIZIO,"Automatico");
@@ -84,7 +89,20 @@ public class MainProject {
 		//Tratta r1 = new Tratta("Roma", "Milano","tr2565", TramDAO.getByCode("AB123CV"),Duration.ofMinutes(90), Duration.ofMinutes(80));
 		//TrattaDAO.save(r1);
 		
-		TrattaDAO.getNtratte("AB123CV");
+		//TrattaDAO.getNtratte("AB123CV");
+		
+		//StoricoMezzo m1 = new StoricoMezzo(StoricoMezzoDAO.getByStato(name),TramDAO.getByCode(name),LocalDate.of(2022,10, 21), LocalDate.of(2022, 12, 30));
+		//StoricoMezzo m2 = new StoricoMezzo(StoricoMezzoDAO.getByStato(name),AutobusDAO.getByCode(name) ,LocalDate.of(2022, 11, 17), LocalDate.of(2023, 1, 15));
+		//StoricoMezzoDAO.save(m1);
+		
+		
+		String name ="CV128GH";
+		StoricoMezzoDAO.inServizio(name);
+		//StoricoMezzoDAO.inManutenzione(name);
+		
+		
+		 //BigliettoConvalidato  b = new BigliettoConvalidato (BigliettoConvalidatoDAO.convalida("try2233"),BigliettoConvalidatoDAO.getMezzo("AB123CV"));
+		 //BigliettoConvalidatoDAO.save(b);
 		 
 	}
 }
