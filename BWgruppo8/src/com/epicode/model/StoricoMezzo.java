@@ -55,8 +55,63 @@ public class StoricoMezzo {
 	public StoricoMezzo() {
 		super();
 	}
+
+
+	public Stato getStatus() {
+		return status;
+	}
+
+
+	public void setStatus(Stato status) {
+		this.status = status;
+	}
+
+
+	public MezziTrasporto getMezzoAssociato() {
+		return mezzoAssociato;
+	}
+
+
+	public void setMezzoAssociato(MezziTrasporto mezzoAssociato) {
+		this.mezzoAssociato = mezzoAssociato;
+	}
+
+
+	public LocalDate getDataInizio() {
+		return dataInizio;
+	}
+
+
+	public void setDataInizio(LocalDate dataInizio) {
+		this.dataInizio = dataInizio;
+	}
+
+
+	public LocalDate getDataFine() {
+		return dataFine;
+	}
+
+
+	public void setDataFine(LocalDate dataFine) {
+		this.dataFine = dataFine;
+	}
+
+
+	public Long getId() {
+		return id;
+	}
     
 
+    @Override
+    public String toString() {
+        return "StoricoMezzo{" +
+                "id=" + id +
+                ", status=" + status +
+                ", mezzoAssociato=" + mezzoAssociato +
+                ", dataInizio=" + dataInizio +
+                ", dataFine=" + dataFine +
+                '}';
+    }
     
     
 

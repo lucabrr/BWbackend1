@@ -41,10 +41,16 @@ public class Autobus extends MezziTrasporto {
 
 
 
-	@Override
-	public String toString() {
-		return "Autobus [cambio=" + cambio + "]";
-	}
+	 @Override
+	    public String toString() {
+	        return "Autobus{" +
+	                "id=" + id +
+	                ", posti=" + posti +
+	                ", immatricolazione='" + immatricolazione + '\'' +
+	                ", stato=" + stato +
+	                ", cambioi=" + cambio +
+	                '}';
+	    }
 
 
 
