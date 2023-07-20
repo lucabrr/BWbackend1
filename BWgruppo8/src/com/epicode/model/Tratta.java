@@ -24,34 +24,39 @@ public class Tratta {
 	protected String capolinea;
 	@Column(nullable = false)
 	String codiceTratta;
-	@OneToMany
-	protected List<MezziTrasporto> mezzi;
+	@ManyToOne
+	protected MezziTrasporto mezzo;
 	@Column(nullable = false)
 	protected Duration tempoMedio;
 	@Column(nullable = false)
 	protected Duration tempoEffettivo;
 	
 	
-	public Tratta(String partenza, String capolinea, String codiceTratta, Duration tempoMedio,
+	
+	
+	
+	
+	public Tratta(String partenza, String capolinea, String codiceTratta, MezziTrasporto mezzo, Duration tempoMedio,
 			Duration tempoEffettivo) {
 		super();
 		this.partenza = partenza;
 		this.capolinea = capolinea;
 		this.codiceTratta = codiceTratta;
+		this.mezzo = mezzo;
 		this.tempoMedio = tempoMedio;
 		this.tempoEffettivo = tempoEffettivo;
-		
 	}
-	
-	
-	
-	public Tratta(Long id, String partenza, String capolinea, String codiceTratta,
+
+
+
+	public Tratta(Long id, String partenza, String capolinea, String codiceTratta,MezziTrasporto mezzo,
 			Duration tempoMedio, Duration tempoEffettivo) {
 		super();
 		this.id = id;
 		this.partenza = partenza;
 		this.capolinea = capolinea;
 		this.codiceTratta = codiceTratta;
+		this.mezzo = mezzo;
 		this.tempoMedio = tempoMedio;
 		this.tempoEffettivo = tempoEffettivo;
 		
