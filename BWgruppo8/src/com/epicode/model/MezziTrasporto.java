@@ -98,8 +98,6 @@ public class MezziTrasporto {
 		return storico;
 	}
 
-
-
 	public void setStorico(List<StoricoMezzo> storico) {
 		this.storico = storico;
 	}
@@ -132,6 +130,14 @@ public class MezziTrasporto {
 
 	public Long getId() {
 		return id;
+	}
+
+
+
+
+	public Stato getStato() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	

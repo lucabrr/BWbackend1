@@ -25,6 +25,10 @@ public class BigliettoConvalidato {
 		super();
 		this.biglietto = biglietto;
 		this.mezzo = mezzo;
+		if (mezzo.stato != Stato.SERVIZIO) {
+            throw new Error("Il mezzo non è attualmente in servizio.");
+        }
+		
 	}
 
 
@@ -34,6 +38,9 @@ public class BigliettoConvalidato {
 		this.id = id;
 		this.biglietto = biglietto;
 		this.mezzo = mezzo;
+		if (mezzo.stato != Stato.SERVIZIO) {
+            throw new Error("Il mezzo non è attualmente in servizio.");
+        }
 	}
 
 

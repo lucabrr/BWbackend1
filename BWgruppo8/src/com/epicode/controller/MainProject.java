@@ -49,7 +49,12 @@ public class MainProject {
 		//RivenditoreAutorizzato r2 = new RivenditoreAutorizzato("Roma", "settore01", "Marco", "tru8977");
 		//RivenditoreAutorizzatoDAO.save(r2);
 		
-		//Biglietto b1 = new Biglietto("try2233", LocalDate.of(2022, 7, 5), RivenditoreAutorizzatoDAO.getById(17l), null);
+		 
+		//RivenditoreAutorizzato r2 = new RivenditoreAutorizzato("Napoli", "settore15", "Marco", "cse986");
+		//RivenditoreAutorizzatoDAO.save(r2);
+		
+		
+		//Biglietto b1 = new Biglietto("cse986", LocalDate.of(2022, 8, 5), RivenditoreAutorizzatoDAO.getById(17l), LocalDate.of(2021, 7, 9));
 		//BigliettoDAO.save(b1);
 		
 		//RivenditoreAutorizzato r6 = RivenditoreAutorizzatoDAO.getById(17l);
@@ -108,5 +113,15 @@ public class MainProject {
 		//BigliettoConvalidato  b = new BigliettoConvalidato (BigliettoConvalidatoDAO.getMezzo("GH857KL"),BigliettoConvalidatoDAO.convalida("try2233"));
 		//BigliettoConvalidatoDAO.save(b);
 		 
+		
+		//String codiceDaConvalidare = "yte9628";
+		//Biglietto bigliettoConvalidato = BigliettoConvalidatoDAO.convalida(codiceDaConvalidare);
+		//if (bigliettoConvalidato != null) {
+		    //BigliettoConvalidato b = new BigliettoConvalidato(BigliettoConvalidatoDAO.getMezzo("GH857KL"), bigliettoConvalidato);
+		    //BigliettoConvalidatoDAO.save(b);
+		//}
+		
+		StoricoMezzoDAO.bigliettiVidimati("AB123CV");
+		//StoricoMezzoDAO.numeroBiglietti("AB123CV");
 	}
 }
