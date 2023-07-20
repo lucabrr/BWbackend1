@@ -21,7 +21,7 @@ public class BigliettoConvalidato {
 	
 	
 	
-	public BigliettoConvalidato(Biglietto biglietto, MezziTrasporto mezzo) {
+	public BigliettoConvalidato(MezziTrasporto mezzo,Biglietto biglietto) {
 		super();
 		this.biglietto = biglietto;
 		this.mezzo = mezzo;

@@ -96,13 +96,13 @@ public class MainProject {
 		//StoricoMezzoDAO.save(m1);
 		
 		
-		String name ="CV128GH";
-		StoricoMezzoDAO.inServizio(name);
+		//String name ="CV128GH";
+		//StoricoMezzoDAO.inServizio(name);
 		//StoricoMezzoDAO.inManutenzione(name);
 		
 		
-		 //BigliettoConvalidato  b = new BigliettoConvalidato (BigliettoConvalidatoDAO.convalida("try2233"),BigliettoConvalidatoDAO.getMezzo("AB123CV"));
-		 //BigliettoConvalidatoDAO.save(b);
+		 BigliettoConvalidato  b = new BigliettoConvalidato (BigliettoConvalidatoDAO.getMezzo("GH857KL"),BigliettoConvalidatoDAO.convalida("try2233"));
+		 BigliettoConvalidatoDAO.save(b);
 		 
 	}
 }
