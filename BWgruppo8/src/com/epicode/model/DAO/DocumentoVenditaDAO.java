@@ -2,6 +2,7 @@ package com.epicode.model.DAO;
 
 import java.time.LocalDate;
 
+import javax.persistence.NoResultException;
 import javax.persistence.Query;
 
 import org.jboss.jandex.Main;
@@ -52,10 +53,14 @@ public class DocumentoVenditaDAO {
 			Query q = MainProject.em.createQuery(query);
 			q.setParameter("codiceTessera", codiceTessera);
 			Abbonamento a = (Abbonamento) q.getSingleResult();
-			MainProject.log.info("L'abbonamento scade il "+ a.getDataScadenza());
-		} catch (Exception e) {
-			MainProject.log.error(e.getMessage());
+			MainProject.log.info("Data scadenza abbonamento : "+ a.getDataScadenza());
+			
 		}
+		
+		
+		catch (NoResultException e) {
+	        MainProject.log.info("nessun abbonamento valido trovato per il codice tessera: " + codiceTessera);
+	    }
 		
 	}
 

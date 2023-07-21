@@ -20,7 +20,7 @@ public class BigliettoConvalidatoDAO {
 			MainProject.em.getTransaction().begin();
 			MainProject.em.persist(a);
 			MainProject.em.getTransaction().commit();
-			MainProject.log.info("Biglietto: "+ a.getBiglietto() +" creato");
+			MainProject.log.info("Biglietto: "+ a.getBiglietto().getCodice() +" convalidato");
 			
 		}catch (Exception e) {
 			MainProject.em.getTransaction().rollback();
@@ -30,24 +30,27 @@ public class BigliettoConvalidatoDAO {
 	}
 	
 	
-	public static Biglietto convalida(String codice) {
+	public static Biglietto convalida(Biglietto bi, MezziTrasporto mezzo) {
 	    Biglietto t = null;
+	    
 	    try {
 	        String query = "SELECT m FROM Biglietto m WHERE m.codice = :codice";
 	        Query q = MainProject.em.createQuery(query);
-	        q.setParameter("codice", codice);
+	        q.setParameter("codice", bi.getCodice());
 	        t = (Biglietto) q.getSingleResult();
 	        if (t.getConvalidato().equals(false)) {
 	            t.setDataConvalida(LocalDate.now());
 	            t.setConvalidato(true);
 	            MainProject.em.merge(t);
+	            BigliettoConvalidato b = new BigliettoConvalidato(mezzo,bi);
+	            BigliettoConvalidatoDAO.save(b);
 	        } else {
-	            MainProject.log.error("Il biglietto è stato vidimato e non può essere utilizzato");
+	            MainProject.log.error("Il biglietto è stato già vidimato e non può essere riutilizzato");
 	            return null;
 	        }
 	        
 	    } catch (NoResultException ex) {
-	        MainProject.log.error("Biglietto non trovato per il codice: " + codice);
+	        MainProject.log.error("Biglietto non trovato per il codice: " + bi.getCodice());
 	    } catch (Exception e) {
 	        e.printStackTrace();
 	        MainProject.log.error(e.getMessage());

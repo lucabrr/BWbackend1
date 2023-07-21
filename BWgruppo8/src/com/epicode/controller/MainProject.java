@@ -46,15 +46,16 @@ public class MainProject {
 	public static void main(String[] args) {
 		
 		 
-		//RivenditoreAutorizzato r2 = new RivenditoreAutorizzato("Roma", "settore01", "Marco", "tru8977");
+		//RivenditoreAutorizzato r2 = new RivenditoreAutorizzato("Roma", "settore01", "Marco", "TRU8977");
 		//RivenditoreAutorizzatoDAO.save(r2);
+		
 		
 		 
 		//RivenditoreAutorizzato r2 = new RivenditoreAutorizzato("Napoli", "settore15", "Marco", "cse986");
 		//RivenditoreAutorizzatoDAO.save(r2);
 		
 		
-		//Biglietto b1 = new Biglietto("cse986", LocalDate.of(2022, 8, 5), RivenditoreAutorizzatoDAO.getById(17l), LocalDate.of(2021, 7, 9));
+		//Biglietto b1 = new Biglietto("big1231", LocalDate.of(2022, 8, 5), RivenditoreAutorizzatoDAO.getByCode("TRU8977"));
 		//BigliettoDAO.save(b1);
 		
 		//RivenditoreAutorizzato r6 = RivenditoreAutorizzatoDAO.getById(17l);
@@ -62,7 +63,7 @@ public class MainProject {
 		
 		//DistributoreAutomatico d1 = new DistributoreAutomatico("Vicenza", "settore0", Status.ATTIVO,"db9823");
 		//DistributoreAutomaticoDAO.save(d1);
-		//Biglietto b2 = new Biglietto("bnb302", LocalDate.of(2023, 7, 9), DistributoreAutomaticoDAO.getByCode("db9823"), LocalDate.of(2023, 7, 9));
+		//Biglietto b2 = new Biglietto("bnb312", LocalDate.of(2023, 7, 9), RivenditoreAutorizzatoDAO.getByCode("TRU8977"), null);
 		//BigliettoDAO.save(b2);
 		//DistributoreAutomatico d1 = DistributoreAutomaticoDAO.getByCode(" gfd123");
 		//d1.getDocumentiDiVenditaEmessi().forEach(e -> log.info(e.toString()));
@@ -70,13 +71,13 @@ public class MainProject {
 		//Utente u1 = new Utente("Mario", "Rossi");
 		//Utente u2 = new Utente("Giovanna", "Arco");
 		
-		//UtenteDAO.save(u1);
-		 //Tessera t1 = new Tessera("tes2222", LocalDate.of(2022, 5, 10), LocalDate.of(2022, 5, 10), UtenteDAO.getById(1l));
+		//UtenteDAO.save(u2);
+		// Tessera t1 = new Tessera("tes2222", LocalDate.of(2022, 5, 10), LocalDate.of(2022, 5, 10), UtenteDAO.getById(1l));
 		//Tessera t2 = new Tessera("tes1212", LocalDate.of(2023, 6, 10), LocalDate.of(2024, 6, 9), UtenteDAO.getById(2l));
 		 //TesseraDAO.save(t2);
 		
-		//Abbonamento a1 = new Abbonamento("abb2213", LocalDate.of(2022, 6, 20), DistributoreAutomaticoDAO.getByCode("db9823"), LocalDate.of(2022, 7, 19), Periodicita.MENSILE, TesseraDAO.getByCode("tes2222"));
-		//Abbonamento a2 = new Abbonamento("abb9999", LocalDate.of(2023, 8, 11), RivenditoreAutorizzatoDAO.getByCode("tru8977"), LocalDate.of(2023, 9, 10), Periodicita.MENSILE, TesseraDAO.getByCode("tes1212"));
+		//Abbonamento a1 = new Abbonamento("abb2213", LocalDate.of(2022, 6, 20), RivenditoreAutorizzatoDAO.getByCode("TRU8977"), LocalDate.of(2022, 7, 19), Periodicita.MENSILE, TesseraDAO.getByCode("tes2222"));
+		//Abbonamento a2 = new Abbonamento("abb9999", LocalDate.of(2023, 8, 11), RivenditoreAutorizzatoDAO.getByCode("TRU8977"), LocalDate.of(2023, 9, 10), Periodicita.MENSILE, TesseraDAO.getByCode("tes1212"));
 		//AbbonamentoDAO.save(a2);
 		//System.out.println(DocumentoVenditaDAO.getAllDocumentiEmessi(LocalDate.of(2022, 6, 10),LocalDate.of(2024, 10, 10),DistributoreAutomaticoDAO.getByCode("db9823")));
 		//DocumentoVenditaDAO.controlloAbbonamento("tes1212");
@@ -91,32 +92,32 @@ public class MainProject {
 		 //Autobus a2 = new Autobus (45,"CV128GH",Stato.SERVIZIO,"Automatico");
 		 //AutobusDAO.save(a2);
 		
-		//Tratta r1 = new Tratta("Roma", "Milano","tr2565", TramDAO.getByCode("im5455"),Duration.ofMinutes(90), Duration.ofMinutes(80));
-		//Tratta r1 = new Tratta("Roma", "Milano","rm3000", TramDAO.getByCode("im5455"),Duration.ofMinutes(90), Duration.ofMinutes(100));
+		 //Tratta r1 = new Tratta("Roma", "Milano","rm2565", TramDAO.getByCode("AB123CV"),Duration.ofMinutes(90), Duration.ofMinutes(100));
+		 //Tratta r2 = new Tratta("Roma", "Milano","rm2565", TramDAO.getByCode("GH857KL"),Duration.ofMinutes(90), Duration.ofMinutes(100));
 		//TrattaDAO.save(r1);
+		//TrattaDAO.countTratteByCodiceTrattaAndMezzo("rm2565", TramDAO.getByCode("AB123CV"));
+		//TrattaDAO.getNtratta("rm2565", TramDAO.getByCode("AB123CV"));
 		
-		//TrattaDAO.getNtratte("im5455");
-		//TrattaDAO.getNtratte("AB123CV");
 		
-		//StoricoMezzo m1 = new StoricoMezzo(StoricoMezzoDAO.getByStato(name),TramDAO.getByCode(name),LocalDate.of(2022,10, 21), LocalDate.of(2022, 12, 30));
+		
+		//String name ="GH857KL";
+		//StoricoMezzo m1 = new StoricoMezzo(Stato.SERVIZIO,TramDAO.getByCode(name),LocalDate.of(2021,4, 6), LocalDate.of(2022,4, 5));
 		//StoricoMezzo m2 = new StoricoMezzo(StoricoMezzoDAO.getByStato(name),AutobusDAO.getByCode(name) ,LocalDate.of(2022, 11, 17), LocalDate.of(2023, 1, 15));
 		//StoricoMezzoDAO.save(m1);
 		
 		
-		//String name ="CV128GH";
 		//StoricoMezzoDAO.inServizio(name);
 		//StoricoMezzoDAO.inManutenzione(name);
 		
 		
 		
-		//String codiceDaConvalidare = "yte9628";
+		 //BigliettoDAO.getCode("big1231");
+		//BigliettoConvalidatoDAO.convalida(BigliettoDAO.getCode("bnb312"), TramDAO.getByCode("AB123CV"));
+		//String codiceDaConvalidare = "big1231";
 		//Biglietto bigliettoConvalidato = BigliettoConvalidatoDAO.convalida(codiceDaConvalidare);
-		//if (bigliettoConvalidato != null) {
-		    //BigliettoConvalidato b = new BigliettoConvalidato(BigliettoConvalidatoDAO.getMezzo("GH857KL"), bigliettoConvalidato);
-		    //BigliettoConvalidatoDAO.save(b);
-		//}
+
 		
 		//StoricoMezzoDAO.bigliettiVidimati("AB123CV");
-		StoricoMezzoDAO.numeroBiglietti("AB123CV");
+		//StoricoMezzoDAO.numeroBiglietti("AB123CV");
 	}
 }

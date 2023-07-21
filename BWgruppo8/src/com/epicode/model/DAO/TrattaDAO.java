@@ -7,12 +7,18 @@ import javax.persistence.Query;
 
 import com.epicode.controller.MainProject;
 import com.epicode.model.MezziTrasporto;
+import com.epicode.model.Stato;
 import com.epicode.model.Tratta;
 
 public class TrattaDAO {
 
 	
 	public static void save (Tratta t) {
+		if(t.getMezzo().getStato()!= Stato.SERVIZIO) {
+			MainProject.log.info("il mezzo "+ t.getMezzo().getImmatricolazione() + " è in manutenzione, non può essere associato a una tratta" );
+			
+			return;
+		}
 		try {
 			MainProject.em.getTransaction().begin();
 			MainProject.em.persist(t);
@@ -22,25 +28,43 @@ public class TrattaDAO {
 			MainProject.log.error(e.getMessage());
 		}
 	}
-//	public static void getNtratte(String imm){
-//		
-//		String query =  "SELECT t, COUNT(t), t.tempoEffettivo "
-//				+ "FROM Tratta t WHERE t.mezzo.immatricolazione = :imm GROUP BY t";
-//		Query q = MainProject.em.createQuery(query);
-//		q.setParameter("imm", imm);
-//			List<Object[]> lista = q.getResultList();
-//			
-//			for (Object[] result : lista) {
-//			    Tratta tratta = (Tratta) result[0];
-//			    Long count = (Long) result[1];
-//			    Duration tempoEffettivo = (Duration) result[2];
-//
-//			    System.out.println("Codice Tratta: " + tratta.getCodiceTratta());
-//			    System.out.println("Numero di volte in cui la Tratta è stata effettuata: " + count);
-//			    System.out.println("Tempo effettivo per la Tratta: " + tempoEffettivo);
-//			    System.out.println("-----------------------------------");
-//			}
-//	}
+	public static void countTratteByCodiceTrattaAndMezzo(String codiceTratta, MezziTrasporto mezzo) {
+	    String query = "SELECT COUNT(t) " +
+	                   "FROM Tratta t " +
+	                   "WHERE t.codiceTratta = :codiceTratta " +
+	                   "AND t.mezzo = :mezzo";
+	    Query  q = MainProject.em.createQuery(query, Long.class);
+	    q.setParameter("codiceTratta", codiceTratta);
+	    q.setParameter("mezzo", mezzo);
+	    Long count = (Long) q.getSingleResult();
+
+	    System.out.println("il mezzo "+ mezzo.getImmatricolazione() +" ha fatto la tratta "+ codiceTratta + " : " + count + " volte");
+	    
+	}
 	
 	
+	
+	
+	public static void getNtratta(String codiceTratta, MezziTrasporto mezzo) {
+	    String query = "SELECT t.codiceTratta, t.mezzo, t.tempoEffettivo " +
+	                   "FROM Tratta t " +
+	                   "WHERE t.codiceTratta = :codiceTratta " +
+	                   "AND t.mezzo = :mezzo";
+	    Query q = MainProject.em.createQuery(query, Object[].class);
+	    q.setParameter("codiceTratta", codiceTratta);
+	    q.setParameter("mezzo", mezzo);
+	    List<Object[]> results = q.getResultList();
+
+	    if (results.isEmpty()) {
+	        System.out.println("Nessuna tratta trovata con il codice " + codiceTratta +
+	                " e il mezzo con immatricolazione " + mezzo.getImmatricolazione());
+	        return;
+	    }
+	    countTratteByCodiceTrattaAndMezzo(codiceTratta,mezzo);
+	    for (Object[] result : results) {
+	        Duration tempoEffettivo = (Duration) result[2];
+	   	    System.out.println("Tempo effettivo per la tratta: " + tempoEffettivo);
+	    }
+	    System.out.println("-----------------------------------");
+	}	
 }

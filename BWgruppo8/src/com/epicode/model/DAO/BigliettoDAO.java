@@ -1,5 +1,7 @@
 package com.epicode.model.DAO;
 
+import javax.persistence.Query;
+
 import com.epicode.controller.MainProject;
 import com.epicode.model.Biglietto;
 
@@ -39,11 +41,12 @@ public class BigliettoDAO {
 	
 	public static Biglietto getCode(String codice) {
 		Biglietto b = null;
+		String query = "SELECT b FROM Biglietto b WHERE b.codice = :codice";
 		try {
-			MainProject.em.getTransaction().begin();
-			b = MainProject.em.find(Biglietto.class, codice);
-			MainProject.em.getTransaction().commit();
-			MainProject.log.info(b.toString());
+		Query q = MainProject.em.createQuery(query);
+			q.setParameter("codice", codice);
+			b = (Biglietto) q.getSingleResult();
+			
 			
 			
 		} catch (Exception e) {
