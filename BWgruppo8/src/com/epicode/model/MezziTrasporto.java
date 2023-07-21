@@ -39,17 +39,13 @@ public class MezziTrasporto {
     protected List<BigliettoConvalidato>bigliettoConvalidato;
     @OneToMany
     protected List<Tratta> tratta;
-    
-    
+
 	public MezziTrasporto(int posti, String immatricolazione, Stato stato) {
 		super();
 		this.posti = posti;
 		this.immatricolazione = immatricolazione;
 		this.stato = stato;
 	}
-
-
-
 
 	public MezziTrasporto(Long id, int posti, String immatricolazione, List<StoricoMezzo> storico,
 			List<BigliettoConvalidato> bigliettoConvalidato, List<Tratta> tratta) {
@@ -61,8 +57,6 @@ public class MezziTrasporto {
 		this.bigliettoConvalidato = bigliettoConvalidato;
 		this.tratta = tratta;
 	}
-
-
 
 	public MezziTrasporto() {
 		super();

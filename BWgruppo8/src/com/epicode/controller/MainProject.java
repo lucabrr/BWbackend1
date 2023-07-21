@@ -116,7 +116,7 @@ public class MainProject {
 		    //BigliettoConvalidatoDAO.save(b);
 		//}
 		
-		StoricoMezzoDAO.bigliettiVidimati("AB123CV");
-		//StoricoMezzoDAO.numeroBiglietti("AB123CV");
+		//StoricoMezzoDAO.bigliettiVidimati("AB123CV");
+		StoricoMezzoDAO.numeroBiglietti("AB123CV");
 	}
 }
