@@ -1,0 +1,22 @@
+package com.epicode.model.DAO;
+
+import com.epicode.controller.MainProject;
+import com.epicode.model.RivenditoreAutorizzato;
+
+public class RivenditoreAutorizzatoDAO {
+	
+	public void save(RivenditoreAutorizzato r) {
+		try {
+			MainProject.em.getTransaction().begin();
+			MainProject.em.persist(r);
+			MainProject.em.getTransaction().commit();
+			MainProject.log.info("rivenditore:"+ r.getNome()+" è stato creato");
+			
+			
+		} catch (Exception e) {
+			
+		}
+		
+	}
+	
+}

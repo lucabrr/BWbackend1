@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 INDEX VERSION 1.131+C:\Users\Luca\Desktop\BackEndBW\.metadata\.plugins\org.eclipse.jdt.core
 1195028016.index
 697833006.index
@@ -7,6 +8,33 @@ INDEX VERSION 1.131+C:\Users\Luca\Desktop\BackEndBW\.metadata\.plugins\org.eclip
 1899430577.index
 2419360875.index
 2582974823.index
+=======
+INDEX VERSION 1.131+C:\Users\Luca\Desktop\tesssss\BWbackend1\.metadata\.plugins\org.eclipse.jdt.core
+697833006.index
+2130659178.index
+305414726.index
+1865797976.index
+1195028016.index
+591751626.index
+1899430577.index
+435343555.index
+3589600881.index
+3521761035.index
+2714292563.index
+2889233007.index
+979975562.index
+131531222.index
+2419360875.index
+2990624677.index
+3217521980.index
+1562171543.index
+2582974823.index
+4149588929.index
+2838866703.index
+253240274.index
+4090996371.index
+3537265784.index
+>>>>>>> develop
 316518903.index
 3217521980.index
 979975562.index

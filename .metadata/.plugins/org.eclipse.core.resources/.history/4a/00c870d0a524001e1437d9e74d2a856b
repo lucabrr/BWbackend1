@@ -1,0 +1,10 @@
+package com.epicode.model;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Biglietto extends DocumentoVendita {
+	
+	Boolean convalidato;
+	
+}

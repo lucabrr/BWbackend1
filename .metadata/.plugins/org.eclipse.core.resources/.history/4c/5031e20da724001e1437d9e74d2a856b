@@ -1,0 +1,14 @@
+package com.epicode.model;
+
+import java.time.LocalDate;
+
+import javax.persistence.FetchType;
+import javax.persistence.OneToOne;
+
+public class Abbonamento extends DocumentoVendita {
+	
+	LocalDate dataScadenza;
+	Periodicita periodicita;
+	@OneToOne(fetch = FetchType.EAGER)
+	Tessera tessera;
+}

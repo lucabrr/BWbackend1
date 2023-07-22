@@ -1,0 +1,11 @@
+package com.epicode.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+
+@Entity
+public class Biglietto extends DocumentoVendita {
+	@Column(nullable = false)
+	Boolean convalidato = false;
+	
+}
